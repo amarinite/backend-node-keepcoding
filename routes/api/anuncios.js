@@ -27,7 +27,7 @@ router.get("/", async (req, res, next) => {
     const filtro = {};
 
     if (nombre) {
-      filtro.nombre = nombre;
+      filtro.nombre = new RegExp("^" + nombre, "i");
     }
     if (venta) {
       filtro.venta = venta;

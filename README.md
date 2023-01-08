@@ -40,4 +40,36 @@ http://localhost:3000/api/anuncios/tags
 
 ## Filtros de búsqueda
 
+Para filtrar por campo, se puede utilizar "apiv1/anuncios?{campo}={elemento}". Ejemplo:
+
+```sh
+http://localhost:3000/api/anuncios?nombre=Pelota
+```
+
+Para filtrar por venta o compra, se puede utilizar el campo venta con el valor true o false. Ejemplo:
+
+```sh
+http://localhost:3000/api/anuncios?venta=true
+```
+
+Para filtrar por precio, puede buscarse un precio concreto o un rango de precios, con un mínimo y/o un máximo. Ejemplo:
+
+```sh
+http://localhost:3000/api/anuncios?precio=0-100
+```
+
 ## Paginación de resultados
+
+Para especificar los resultados que quieren mostrarse y los anuncios que se deben saltar para paginar las respuestas, podemos utilizar skip y limit en la petición. Ejemplo:
+
+```sh
+http://localhost:3000/api/anuncios?skip=2&limit=2
+```
+
+## Ordenar resultados
+
+Para ordenar resultados, puede usarse la palabra clave "sort" en la petición. Un ejemplo, ordenado por precio:
+
+```sh
+http://localhost:3000/api/anuncios?sort=precio
+```
